@@ -19,7 +19,7 @@ public class Indicador {
 	private String fecha;
 	
 	/** El valor. */
-	private long valor;
+	private double valor;
 	
 	/**
 	 * Contructor vacio de indicador.
@@ -103,7 +103,7 @@ public class Indicador {
 	 *
 	 * @return el valor
 	 */
-	public long getValor() {
+	public double getValor() {
 		return valor;
 	}
 
@@ -112,19 +112,8 @@ public class Indicador {
 	 *
 	 * @param valor el nuevo valor
 	 */
-	public void setValor(long valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
-	}
-
-	/**
-	 * Metodo To string.
-	 *
-	 * @return the string
-	 */
-	@Override
-	public String toString() {
-		return "Indicador [codigo=" + codigo + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + ", fecha="
-				+ fecha + ", valor=" + valor + "]";
 	}
 	
 }
