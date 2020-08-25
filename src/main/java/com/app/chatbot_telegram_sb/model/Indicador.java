@@ -1,83 +1,73 @@
 package com.app.chatbot_telegram_sb.model;
 
-// TODO: Auto-generated Javadoc
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * La clase Indicador.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Indicador {
 
-	/** El codigo. */
-	private String codigo;
+	/** El numero de version. */
+	private String version;
 	
-	/** El nombre. */
-	private String nombre;
-	
-	/** La unidad medida. */
-	private String unidadMedida;
+	/** El autor. */
+	private String autor;
 	
 	/** La fecha. */
 	private String fecha;
 	
-	/** El valor. */
-	private double valor;
+	/** el dolar. */
+	private Dolar dolar;
+	
+	/** el euro. */
+	private Euro euro;
+	
+	/** la uf. */
+	private Uf uf;
+	
+	/** el utm. */
+	private Utm utm;
 	
 	/**
-	 * Contructor vacio de indicador.
+	 * Contructor vacio de Respuesta.
 	 */
 	public Indicador() {}
 
 	/**
-	 * Gets el codigo.
+	 * Gets la version.
 	 *
-	 * @return el codigo
+	 * @return la version
 	 */
-	public String getCodigo() {
-		return codigo;
+	public String getVersion() {
+		return version;
 	}
 
 	/**
-	 * Sets el codigo.
+	 * Sets la version.
 	 *
-	 * @param codigo el nuevo codigo
+	 * @param version la nueva version
 	 */
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setVersion(String version) {
+		this.version = version;
 	}
 
 	/**
-	 * Gets el nombre.
+	 * Gets el autor.
 	 *
-	 * @return el nombre
+	 * @return el autor
 	 */
-	public String getNombre() {
-		return nombre;
+	public String getAutor() {
+		return autor;
 	}
 
 	/**
-	 * Sets el nombre.
+	 * Sets el autor.
 	 *
-	 * @param nombre el nuevo nombre
+	 * @param autor la nueva autor
 	 */
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	/**
-	 * Gets la unidad medida.
-	 *
-	 * @return la unidad medida
-	 */
-	public String getUnidadMedida() {
-		return unidadMedida;
-	}
-
-	/**
-	 * Sets la unidad medida.
-	 *
-	 * @param unidadMedida la nueva unidad medida
-	 */
-	public void setUnidadMedida(String unidadMedida) {
-		this.unidadMedida = unidadMedida;
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
 	/**
@@ -97,23 +87,89 @@ public class Indicador {
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-
-	/**
-	 * Gets el valor.
-	 *
-	 * @return el valor
-	 */
-	public double getValor() {
-		return valor;
-	}
-
-	/**
-	 * Sets el valor.
-	 *
-	 * @param valor el nuevo valor
-	 */
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
 	
+	/**
+	 * Gets the dolar.
+	 *
+	 * @return the dolar
+	 */
+	public Dolar getDolar() {
+		return dolar;
+	}
+
+	/**
+	 * Sets el dolar.
+	 *
+	 * @param dolar el nuevo dolar
+	 */
+	public void setDolar(Dolar dolar) {
+		this.dolar = dolar;
+	}
+
+	/**
+	 * Gets el euro.
+	 *
+	 * @return el euro
+	 */
+	public Euro getEuro() {
+		return euro;
+	}
+
+	/**
+	 * Sets el euro.
+	 *
+	 * @param euro el nuevo euro
+	 */
+	public void setEuro(Euro euro) {
+		this.euro = euro;
+	}
+
+	/**
+	 * Gets la uf.
+	 *
+	 * @return la uf
+	 */
+	public Uf getUf() {
+		return uf;
+	}
+
+	/**
+	 * Sets la uf.
+	 *
+	 * @param uf la nueva uf
+	 */
+	public void setUf(Uf uf) {
+		this.uf = uf;
+	}
+
+	/**
+	 * Gets el utm.
+	 *
+	 * @return el utm
+	 */
+	public Utm getUtm() {
+		return utm;
+	}
+
+	/**
+	 * Sets el utm.
+	 *
+	 * @param utm the el utm
+	 */
+	public void setUtm(Utm utm) {
+		this.utm = utm;
+	}
+
+	
+	/**
+	 * Metodo To string.
+	 *
+	 * @return the string
+	 */
+	@Override
+	public String toString() {
+		return "Indicador [version=" + version + ", autor=" + autor + ", fecha=" + fecha + ", dolar=" + dolar
+				+ ", euro=" + euro + ", uf=" + uf + ", utm=" + utm + "]";
+	}
+
 }

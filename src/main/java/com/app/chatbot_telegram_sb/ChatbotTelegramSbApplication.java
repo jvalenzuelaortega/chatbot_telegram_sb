@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.telegram.telegrambots.ApiContextInitializer;
 
-import com.app.chatbot_telegram_sb.model.Dolar;
+import com.app.chatbot_telegram_sb.model.Indicador;
 
 import javax.annotation.PostConstruct;
 
@@ -52,8 +52,8 @@ public class ChatbotTelegramSbApplication {
     @Bean
     public CommandLineRunner run(RestTemplate restTemplate) {
 		return args -> {
-			Dolar dolar = restTemplate.getForObject("https://mindicador.cl/api", Dolar.class);
-			LOGGER.info(dolar.toString());
+			Indicador respuesta = restTemplate.getForObject("https://mindicador.cl/api", Indicador.class);
+			LOGGER.info(respuesta.getDolar().toString());
 		};
     	
     }
