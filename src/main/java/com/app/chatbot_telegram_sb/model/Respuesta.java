@@ -1,8 +1,11 @@
 package com.app.chatbot_telegram_sb.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * La clase Indicador.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Respuesta {
 
 	/** El numero de version. */

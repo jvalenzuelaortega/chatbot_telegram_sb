@@ -1,5 +1,8 @@
 package com.app.chatbot_telegram_sb.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Dolar extends Indicador {
 
 	@Override
