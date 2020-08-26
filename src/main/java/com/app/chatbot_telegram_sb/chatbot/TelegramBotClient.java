@@ -2,6 +2,9 @@ package com.app.chatbot_telegram_sb.chatbot;
 
 import com.app.chatbot_telegram_sb.properties.TelegramProperties;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +12,8 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 /**
@@ -34,9 +39,13 @@ public class TelegramBotClient extends TelegramLongPollingBot {
 
 		// Verifica si existe mensaje
 		if (update.hasMessage() && update.getMessage().hasText()) {
+			
+			//Genera la informacion a enviar
 			SendMessage message = new SendMessage()
-					.setChatId(update.getMessage().getChatId()).setText(update.getMessage().getText());
+					.setChatId(update.getMessage().getChatId())
+					.setText(update.getMessage().getText());
 			try {
+				//Envia el mensaje
 				execute(message);
 			} catch (TelegramApiException e) {
 				e.printStackTrace();
