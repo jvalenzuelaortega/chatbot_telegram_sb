@@ -2,9 +2,8 @@ package com.app.chatbot_telegram_sb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-// TODO: Auto-generated Javadoc
 /**
- * La clase Indicador.
+ * La clase Dolar.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Dolar {
@@ -25,7 +24,7 @@ public class Dolar {
 	private double valor;
 	
 	/**
-	 * Contructor vacio de indicador.
+	 * Contructor vacio de dolar.
 	 */
 	public Dolar() {}
 
@@ -119,6 +118,12 @@ public class Dolar {
 		this.valor = valor;
 	}
 
+	
+	/**
+	 * Metodo To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return "Dolar [codigo=" + codigo + ", nombre=" + nombre + ", unidadMedida=" + unidadMedida + ", fecha=" + fecha

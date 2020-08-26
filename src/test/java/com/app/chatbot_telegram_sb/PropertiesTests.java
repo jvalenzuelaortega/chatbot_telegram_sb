@@ -9,17 +9,24 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 @TestPropertySource("classpath:application.properties")
-public class TelegramPropertiesTests {
+@TestPropertySource("classpath:telegram.properties")
+public class PropertiesTests {
 
+	@Value("${urlApi}")
+    private String apiUrl;
+	
+	@Value("${response.message}")
+    private String message;
+	
     @Value("${telegram.botname}")
     private String botname;
-
-    @Value("${telegram.token}")
-    private String telegramToken;
 
     @Test
     public void loadPropertiesTest(){
         assertThat(botname).isEqualTo("botdolar");
-        assertThat(telegramToken).isEqualTo("1270979653:AAFyo7UKApsk7PIHG4rG-1mIz6SHy6xoxTM");
+        assertThat(apiUrl).isEqualTo("https://mindicador.cl/api");
+        assertThat(message).isEqualTo("El valor del {{indicador}} de hoy {{fecha}} es de {{valor}}");
+        
+        System.out.println(message);
     }
 }
