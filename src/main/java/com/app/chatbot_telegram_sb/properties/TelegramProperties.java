@@ -17,7 +17,7 @@ public class TelegramProperties {
 
     /** El token extraida por properties.. */
     @Value("${telegram.token}")
-    private String telegramToken;
+    private String botToken;
 
     /**
      * Gets el nombre del bot.
@@ -34,7 +34,7 @@ public class TelegramProperties {
      * @return el token
      */
     public String getTelegramToken() {
-        return telegramToken;
+        return botToken;
     }
 
 }
