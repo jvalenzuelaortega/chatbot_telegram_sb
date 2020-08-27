@@ -1,8 +1,11 @@
 package com.app.chatbot_telegram_sb.enums;
 
-public enum Indicadores {
+/**
+ * El Enum Indicadores.
+ */
+public enum Indicadores {	
 	DOLAR,
 	EURO,
-	IF,
+	UF,
 	UTM;
 }
