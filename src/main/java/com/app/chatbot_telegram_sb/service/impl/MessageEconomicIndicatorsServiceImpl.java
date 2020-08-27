@@ -8,7 +8,7 @@ import com.app.chatbot_telegram_sb.model.Indicador;
 import com.app.chatbot_telegram_sb.properties.ApplicationProperties;
 import com.app.chatbot_telegram_sb.service.IndicadorApiService;
 import com.app.chatbot_telegram_sb.service.MessageEconomicIndicatorsService;
-import com.app.chatbot_telegram_sb.utils.TelegramUtils;
+import com.app.chatbot_telegram_sb.utils.ApplicationsUtils;
 
 /**
  * La Clase MessageEconomicIndicatorsServiceImpl.
@@ -33,7 +33,7 @@ public class MessageEconomicIndicatorsServiceImpl implements MessageEconomicIndi
 	@Override
 	public String messageToSendTelegram(String command) {	
 		String message = "";
-		String commandFormated = TelegramUtils.formatCommand(command);
+		String commandFormated = ApplicationsUtils.formatCommand(command);
 		
 		if(commandFormated.equals("DOLAR") || commandFormated.equals("EURO") || 
 				commandFormated.equals("UF") || commandFormated.equals("UTM")) {
@@ -44,33 +44,33 @@ public class MessageEconomicIndicatorsServiceImpl implements MessageEconomicIndi
 			switch(indicadores) {
 				case DOLAR:
 					indicador = indicadorApiService.getIndicadorApi(appProperties.getUrlApi());				
-					message = TelegramUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
+					message = ApplicationsUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
 							indicador.getDolar().getCodigo(),
-							indicador.getDolar().getFecha(), 
+							ApplicationsUtils.dateTimeFormatted(), 
 							indicador.getDolar().getValor());
 					break;
 				
 				case EURO:
 					indicador = indicadorApiService.getIndicadorApi(appProperties.getUrlApi());				
-					message = TelegramUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
+					message = ApplicationsUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
 							indicador.getEuro().getCodigo(),
-							indicador.getEuro().getFecha(), 
+							ApplicationsUtils.dateTimeFormatted(), 
 							indicador.getEuro().getValor());
 					break;
 					
 				case UF:
 					indicador = indicadorApiService.getIndicadorApi(appProperties.getUrlApi());				
-					message = TelegramUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
+					message = ApplicationsUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
 							indicador.getUf().getCodigo(),
-							indicador.getUf().getFecha(), 
+							ApplicationsUtils.dateTimeFormatted(), 
 							indicador.getUf().getValor());
 					break;
 					
 				case UTM:
 					indicador = indicadorApiService.getIndicadorApi(appProperties.getUrlApi());				
-					message = TelegramUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
+					message = ApplicationsUtils.replaceValueOfMessage(appProperties.getResponseMessage(),
 							indicador.getUtm().getCodigo(),
-							indicador.getUtm().getFecha(), 
+							ApplicationsUtils.dateTimeFormatted(), 
 							indicador.getUtm().getValor());
 					break;
 				
