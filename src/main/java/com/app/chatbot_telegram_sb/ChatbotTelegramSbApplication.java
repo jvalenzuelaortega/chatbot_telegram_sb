@@ -28,5 +28,4 @@ public class ChatbotTelegramSbApplication {
     public static void main(String[] args) {
         SpringApplication.run(ChatbotTelegramSbApplication.class, args);
     }
-
 }
