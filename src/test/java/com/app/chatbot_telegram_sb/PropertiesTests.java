@@ -18,15 +18,23 @@ public class PropertiesTests {
 	@Value("${response.message}")
     private String message;
 	
-    @Value("${telegram.botname}")
-    private String botname;
+	@Value("${response.welcome.message.1}")
+    private String welcome1;
+	
+	@Value("${response.welcome.message.2}")
+    private String welcome2;
+	
+	@Value("${response.welcome.message.3}")
+    private String welcome3;
+
 
     @Test
     public void loadPropertiesTest(){
-        assertThat(botname).isEqualTo("botdolar");
         assertThat(apiUrl).isEqualTo("https://mindicador.cl/api");
-        assertThat(message).isEqualTo("El valor del {{indicador}} de hoy {{fecha}} es de {{valor}}");
+        assertThat(message).isEqualTo("El valor del {{indicador}} de hoy {{fecha}} es de $ {{valor}} pesos chilenos");
         
-        System.out.println(message);
+        assertThat(welcome1).isEqualTo("Bienvenido al chatbot.");
+        assertThat(welcome2).isEqualTo("A continuacion selecciona una de las palabras para obtener informacion.");
+        assertThat(welcome3).isEqualTo("/dolar - /euro - /uf - /utm");
     }
 }

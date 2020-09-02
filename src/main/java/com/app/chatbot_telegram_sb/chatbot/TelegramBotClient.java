@@ -1,7 +1,5 @@
 package com.app.chatbot_telegram_sb.chatbot;
 
-import com.app.chatbot_telegram_sb.properties.TelegramProperties;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +8,9 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import com.app.chatbot_telegram_sb.properties.TelegramProperties;
+import com.app.chatbot_telegram_sb.service.MessageEconomicIndicatorsService;
 
 /**
  * La clase TelegramBotClient.
@@ -23,28 +24,40 @@ public class TelegramBotClient extends TelegramLongPollingBot {
 	/** Inyeccion de la dependecia ("Cableado automatico" de la clase). */
 	@Autowired
 	TelegramProperties prop;
+	
+	/** Inyeccion de la dependecia ("Cableado automatico" de la clase). */
+	@Autowired
+	MessageEconomicIndicatorsService messageEconomicIndicator;
 
 	/**
-	 * Metodo que se encarga de recibir y enviar el mensaje
+	 * Metodo que se encarga de recibir y enviar el mensaje.
 	 *
 	 * @param update the update
 	 */
 	@Override
 	public void onUpdateReceived(Update update) {
 
+		LOGGER.info("Verificando mensaje en chat");
+		
 		// Verifica si existe mensaje
 		if (update.hasMessage() && update.getMessage().hasText()) {
 			
+			LOGGER.info("Obteniendo mensaje");
+			//Obteniendo mensaje
+			String message = update.getMessage().getText();
+			String messajeToSend = messageEconomicIndicator.messageToSendTelegram(message);
+			
+			LOGGER.info("Enviando mensaje segun opcion");
 			//Genera la informacion a enviar
-			SendMessage message = new SendMessage()
+			SendMessage sendMessage = new SendMessage()
 					.setChatId(update.getMessage().getChatId())
-					.setText(update.getMessage().getText());
+					.setText(messajeToSend);
 			try {
 				//Envia el mensaje
-				execute(message);
+				execute(sendMessage);
+				LOGGER.info("Mensaje enviado");
 			} catch (TelegramApiException e) {
 				e.printStackTrace();
-				LOGGER.info("Error "+ e);
 			}
 		}
 	}
@@ -60,7 +73,7 @@ public class TelegramBotClient extends TelegramLongPollingBot {
 	}
 
 	/**
-	 * Gets el token
+	 * Gets el token.
 	 *
 	 * @return el token
 	 */
