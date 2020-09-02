@@ -4,8 +4,8 @@ Chatboot de prueba realizado con SpringBoot para Telegram
 
 ## Tecnologias utilizadas
 
- * [Spring Boot](https://spring.io/projects/spring-boot)
- * [TelegramBots](https://github.com/rubenlagus/TelegramBots)
+ * [Spring Boot](https://spring.io/projects/spring-boot) - Framework Java
+ * [TelegramBots](https://github.com/rubenlagus/TelegramBots) - Libreria cliente para Java
 
  ## Requisitos
 
