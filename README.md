@@ -1,4 +1,4 @@
-# Chatbot con Telegram usnado Spring Boot
+# Chatbot con Telegram usando Spring Boot
 
 Chatbot de telegram que muestra el valor del dolar, euro, utm y uf del día.
 
