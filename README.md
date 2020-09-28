@@ -34,7 +34,9 @@ Una vez importado, ejecutar con la herramienta de arranque de proyectos Spring B
 Una vez desplegado, ir a Telegram y buscar el nombre del chatbot creado.
 Al iniciar el bot, se ejecutara el comando /start, el cual desplegara un mensaje de información.
 
-![Imágen de ejemplo](./Screenshot_20200928-170022.jpg)
+<img src="Screenshot_20200928-170022.jpg" style="max-width:50%;">
+
+_Imagen de ejemplo_
 
 Al seleccionar una palabra, mostrará la información del indicador.
 
