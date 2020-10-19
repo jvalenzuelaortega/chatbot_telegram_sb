@@ -14,9 +14,7 @@ Antes de desplegar, ir al properties del proyecto (telegram.properties) y reempl
 ```
 Estos valores deben ser reemplazados por los entregados por el BotFather (Nombre y Token).
 
-```
-Para crear un bot en telegram, visitar https://core.telegram.org/bots y seguir instrucciones
-```
+_Para crear un bot en telegram, visitar https://core.telegram.org/bots y seguir instrucciones_
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
@@ -29,7 +27,11 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ## Despliegue 📦
 
-Una vez importado, ejecutar con la herramienta de arranque de proyectos Spring Boot del IDE
+Una vez clonado, ejecutar el siguiente comando:
+
+```
+mvn spring-boot:run
+```
 
 Una vez desplegado, ir a Telegram y buscar el nombre del chatbot creado.
 Al iniciar el bot, se ejecutara el comando /start, el cual desplegara un mensaje de información.
@@ -40,7 +42,7 @@ Al seleccionar una palabra, mostrará la información del indicador.
 
 ## Ejecutando las pruebas ⚙️
 
-_Existen algunas clases de prueba dentro del proyecto, para ejecutarlas hay que ir a la clase test y hacer run (dependiendo del IDE) (EN DESARROLLO)_
+_(EN DESARROLLO)_
 
 ## Construido con 🛠️
 
@@ -51,7 +53,6 @@ _Existen algunas clases de prueba dentro del proyecto, para ejecutarlas hay que 
 ## Contribuyendo 🖇️
 
 _En desarrollo ..._
-
 
 ## Versionado 📌
 
